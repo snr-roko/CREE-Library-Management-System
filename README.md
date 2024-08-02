@@ -1,6 +1,6 @@
 # CREE-Library-Management-System
 
-A simple Library Management Library System Using Python and SQL...
+A simple Library Management System Using Python and SQL...
 
 ## Basic Steps:
 
