@@ -12,3 +12,10 @@ myConn = mysql.connector.connect(
 )
 
 myCursor = myConn.cursor()
+
+def list_books():
+    myCursor.execute("SELECT * FROM Books")
+    result = myCursor.fetchall()
+    for item in result:
+        print(*item)
+    
