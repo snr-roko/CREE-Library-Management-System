@@ -28,3 +28,11 @@ search_term = "NAZIS"
 search_books(search_term, myCursor)
 
 
+=======
+
+def list_books():
+    myCursor.execute("SELECT * FROM Books")
+    result = myCursor.fetchall()
+    for item in result:
+        print(*item)
+   
