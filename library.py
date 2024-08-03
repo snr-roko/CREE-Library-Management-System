@@ -12,3 +12,19 @@ myConn = mysql.connector.connect(
 )
 
 myCursor = myConn.cursor()
+def search_books(title, mycursor):
+  sql = "SELECT * FROM books WHERE title LIKE %s"
+  val = (f"%{title}%",)
+  mycursor.execute(sql, val)
+  results = mycursor.fetchall()
+  if results:
+      print("Books found:")
+      for book in results:
+          print(f"ID: {book[0]}, Title: {book[1]}, Author: {book[2]}, ISBN: {book[3]}")
+  else:
+      print("No books found.")
+
+search_term = "NAZIS" 
+search_books(search_term, myCursor)
+
+
